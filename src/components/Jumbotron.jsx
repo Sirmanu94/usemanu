@@ -11,7 +11,7 @@ function Junbotron() {
                 muted
             />
             <button 
-                className="absolute bottom-[100px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 border border-white rounded-full text-white font-bold px-8 py-2 z-10"
+                className="absolute bottom-[100px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 border border-white rounded-full text-white font-bold px-8 py-2 z-10 hover:text-yellow-300 hover:border-yellow-300 transition-colors duration-300"
             >
                 SCOPRI I SERVIZI
             </button>

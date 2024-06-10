@@ -17,7 +17,7 @@ function Navbar() {
         <div className="container mx-auto flex items-center h-24 relative z-20">
           <a href="" className="flex items-center justify-center">
             <img
-              className="h-20"
+              className="h-[110px]"
               src={logoNavbar}
               alt="Logo"
             />
@@ -27,24 +27,24 @@ function Navbar() {
               alt="Fullstack"
             />
           </a>
-          <nav className="contents font-semibold text-base lg:text-lg">
+          <nav className="contents  font-semibold text-base lg:text-lg">
             <ul className="mx-auto flex items-center">
-              <li className="p-5 xl:p-8 active">
+              <li className="p-5 xl:p-8 active hover:text-yellow-300">
                 <a href="">
                   <span>Home</span>
                 </a>
               </li>
-              <li className="p-5 xl:p-8">
+              <li className="p-5 xl:p-8 hover:text-yellow-300">
                 <a href="">
                   <span>About</span>
                 </a>
               </li>
-              <li className="p-5 xl:p-8">
+              <li className="p-5 xl:p-8 hover:text-yellow-300">
                 <a href="">
                   <span>Progetti</span>
                 </a>
               </li>
-              <li className="p-5 xl:p-8">
+              <li className="p-5 xl:p-8 hover:text-yellow-300">
                 <a href="">
                   <span>Servizi</span>
                 </a>
@@ -53,7 +53,7 @@ function Navbar() {
     
             </ul>
           </nav>
-          <button className="border border-white rounded-full font-bold px-8 py-2">
+          <button className="border border-white rounded-full font-bold px-8 py-2 hover:text-yellow-300 hover:border-yellow-300 transition-colors duration-300">
             Contact Us
           </button>
         </div>

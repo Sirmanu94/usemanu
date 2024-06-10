@@ -26,14 +26,14 @@ function Banner() {
 
             <div className="mt-10 flex flex-wrap justify-center gap-6">
               <a
-                className="block w-full rounded border border-white bg-yellow-300 px-16 py-4 text-base font-medium text-black hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
+                className="block w-full rounded border border-white bg-yellow-300 px-16 py-4 text-base font-medium text-black hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto transition-colors duration-300"
                 href="#"
               >
                 CONTATTACI
               </a>
 
               <a
-                className="block w-full rounded border border-white px-16 py-4 text-base font-medium text-white hover:bg-yellow-300 hover:text-black focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
+                className="block w-full rounded border border-white px-16 py-4 text-base font-medium text-white hover:bg-yellow-300 hover:text-black focus:outline-none focus:ring active:bg-blue-500 sm:w-auto transition-colors duration-300"
                 href="#"
               >
                 SCOPRI DI PIU'
