@@ -22,7 +22,7 @@ function Navbar() {
               alt="Logo"
             />
             <img
-              className="h-4 ml-10"
+              className="h-5 ml-10"
               src={fullstack}
               alt="Fullstack"
             />
@@ -41,23 +41,20 @@ function Navbar() {
               </li>
               <li className="p-5 xl:p-8">
                 <a href="">
-                  <span>Projects</span>
+                  <span>Progetti</span>
                 </a>
               </li>
               <li className="p-5 xl:p-8">
                 <a href="">
-                  <span>Services</span>
+                  <span>Servizi</span>
                 </a>
               </li>
-              <li className="p-5 xl:p-8">
-                <a href="">
-                  <span>Blog</span>
-                </a>
-              </li>
+        
+    
             </ul>
           </nav>
           <button className="border border-white rounded-full font-bold px-8 py-2">
-            Contact me
+            Contact Us
           </button>
         </div>
       </header>

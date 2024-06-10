@@ -9,7 +9,7 @@ function Videobanner(){
         <>
            
             <video
-                className="h-[500px] w-full bg-opacity-50  object-cover  z-0"
+                className="h-600 w-full bg-opacity-50  object-cover  z-0"
                 src={videobanner}
                 autoPlay
                 muted
