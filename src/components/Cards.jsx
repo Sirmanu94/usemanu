@@ -2,6 +2,10 @@ import js from '../assets/js.png';
 import react from '../assets/react.png';
 import node from '../assets/node.png';
 import background from '../assets/background.mp4';
+import { Fade } from "react-awesome-reveal";
+import { Slide } from "react-awesome-reveal";
+
+
 
 function Cards() {
   return (
@@ -23,13 +27,17 @@ function Cards() {
       <div className="relative z-10">
         {/* Titolo principale */}
         <section className="text-center py-8">
+          <Fade triggerOnce={true} duration={3500}>
           <h1 className="text-4xl font-extrabold text-white sm:text-5xl">
             LE NOSTRE TECNOLOGIE
           </h1>
+          </Fade>
         </section>
 
         {/* Sezioni delle tecnologie */}
-        <section>
+         <Slide direction={'left'} triggerOnce={false} duration={3500}>
+           <section>
+        
           <div className="mx-auto max-w-screen-xl px-4 py-6 sm:px-6 sm:py-8 lg:px-4 lg:py-12">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-8">
               <div className="relative h-48 overflow-hidden rounded-lg sm:h-64 lg:order-last lg:h-full">
@@ -51,7 +59,8 @@ function Cards() {
             </div>
           </div>
         </section>
-
+        </Slide>
+        <Slide direction={'right'} triggerOnce={false} duration={3500}>
         <section>
           <div className="mx-auto max-w-screen-xl px-4 py-6 sm:px-6 sm:py-8 lg:px-4 lg:py-12">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-8">
@@ -74,7 +83,9 @@ function Cards() {
             </div>
           </div>
         </section>
+        </Slide>
 
+<Slide direction={'left'} triggerOnce={false} duration={3500}>
         <section>
           <div className="mx-auto max-w-screen-xl px-4 py-6 sm:px-6 sm:py-8 lg:px-4 lg:py-12">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-8">
@@ -97,6 +108,7 @@ function Cards() {
             </div>
           </div>
         </section>
+        </Slide>
       </div>
     </div>
   );

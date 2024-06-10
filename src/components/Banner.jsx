@@ -1,7 +1,11 @@
 import background from '../assets/banner3.png';
+import { Fade } from "react-awesome-reveal";
+
 
 function Banner() {
   return (
+    
+    <Fade triggerOnce={false} duration={4500}>
     <section
       className="bg-black text-white mt-[-40px]"
       style={{ 
@@ -14,6 +18,7 @@ function Banner() {
       <div className="bg-black bg-opacity-0 h-full flex justify-center items-center">
         <div className="mx-auto max-w-screen-xl px-8 py-64 lg:flex lg:h-full lg:items-center">
           <div className="mx-auto max-w-3xl text-center">
+          <Fade triggerOnce={false} duration={4500}>
             <h1 
               className="text-white text-4xl font-extrabold text-transparent sm:text-5xl whitespace-nowrap"
             >
@@ -38,11 +43,14 @@ function Banner() {
               >
                 SCOPRI DI PIU'
               </a>
-            </div>
+             
+            </div> 
+            </Fade>
           </div>
         </div>
       </div>
     </section>
+    </Fade>
   );
 }
 
