@@ -40,9 +40,9 @@ function Cms() {
          <Slide direction={'left'} triggerOnce={false} duration={3500}>
            <section>
         
-          <div className="mx-auto max-w-screen-xl px-4 py-6 sm:px-6 sm:py-8 lg:px-4 lg:py-12">
+          <div className="mx-auto max-w-screen-xl  px-4 py-6 sm:px-6 sm:py-8 lg:px-4 lg:py-12">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-8">
-              <div className="relative h-48 overflow-hidden rounded-lg sm:h-64 lg:order-last lg:h-full">
+              <div className="relative h-screen overflow-hidden rounded-lg sm:h-64 lg:order-last lg:h-full">
                 <img
                   alt="React"
                   src={shopify}

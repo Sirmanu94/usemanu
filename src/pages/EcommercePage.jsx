@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import background from '../assets/background.mp4';
 import Cms from "../components/Cms";
+import Footer from "../components/Footer";
 
 function EcommercePage() {
     return (
@@ -34,6 +35,7 @@ function EcommercePage() {
                 </div>
             </section>
             <Cms/>
+            <Footer/>
         </div>
     )
 }

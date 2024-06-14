@@ -3,8 +3,6 @@ import Navbar from "../components/Navbar";
 import manu from '../assets/manu2.png'; // Percorso corretto per l'immagine
 import background from '../assets/background.mp4';
 import logovideo from '../assets/logovideo2.mp4';
-import certificato from '../assets/certificato.png';
-import { FaReact, FaNodeJs, FaDatabase, FaShopify, FaWordpress, FaJsSquare } from 'react-icons/fa';
 import Footer from "../components/Footer";
 import AboutNumbers from "../components/AboutNumbers";
 import connect from '../assets/connect.png'; // Percorso corretto per l'immagine
@@ -18,13 +16,12 @@ function About() {
                 autoPlay
                 loop
                 muted
-                className="fixed top-0 left-0 w-full h-full object-cover -z-10"
+                className="fixed top-0 left-0 w-full h-full object-cover -z-[10]"
             >
                 <source src={background} type="video/mp4" />
             </video>
 
             {/* Overlay scuro per rendere il testo leggibile */}
-            <div className="fixed top-0 left-0 w-full h-full bg-black opacity-30 -z-10"></div>
 
             <Fade triggerOnce={true} duration={3000}>
                 <Slide direction="right" duration={3000}>
@@ -90,9 +87,8 @@ function About() {
                     />
                 </div>
             </Fade>
-            <AboutNumbers />
-
-            <Footer />
+            <AboutNumbers />     
+            <Footer/>
         </>
     );
 }
