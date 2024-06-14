@@ -48,6 +48,11 @@ function Navbar() {
                   <span>About</span>
                 </Link>
               </li>
+              <li className="p-5 xl:p-8 hover:text-yellow-300">
+                <Link to="/progetti">
+                  <span>Progetti</span>
+                </Link>
+              </li>
               <li className="p-5 xl:p-8 hover:text-yellow-300 relative">
                 <button onClick={toggleDropdown} className="focus:outline-none flex items-center servizi-dropdown">  {/* Added class for targeting */}
                   <span>Servizi</span>

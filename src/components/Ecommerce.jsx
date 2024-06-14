@@ -1,4 +1,5 @@
 import ecomm from '../assets/ecommvideo.mp4';
+import Cms from './Cms';
 
 function Ecommerce() {
   const handleVideoEnd = (event) => {
@@ -42,6 +43,7 @@ function Ecommerce() {
           </div>
         </div>
       </section>
+      <Cms/>
     </>
   );
 }

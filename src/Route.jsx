@@ -2,6 +2,7 @@
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
+import EcommercePage from "./pages/EcommercePage";
 
  const Router = createBrowserRouter([
     {
@@ -19,6 +20,10 @@ import About from "./pages/About";
         ]
         
 
+    },
+    {
+        path:"/e-commerce",
+        element: <EcommercePage/>
     }
  ]
  )
