@@ -24,6 +24,7 @@ function Cms() {
 
       {/* Overlay scuro per rendere il testo leggibile */}
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+      
 
       {/* Contenuto */}
       <div className="relative z-10">
@@ -38,29 +39,61 @@ function Cms() {
 
         {/* Sezioni delle tecnologie */}
          <Slide direction={'left'} triggerOnce={false} duration={3500}>
-           <section>
-        
-          <div className="mx-auto max-w-screen-xl  px-4 py-6 sm:px-6 sm:py-8 lg:px-4 lg:py-12">
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-8">
-              <div className="relative h-screen overflow-hidden rounded-lg sm:h-64 lg:order-last lg:h-full">
-                <img
-                  alt="React"
-                  src={shopify}
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-              </div>
+         <section>
+  <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+      <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
+        <img
+          alt=""
+        src={shopify}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </div>
 
-              <div className="lg:py-12">
-                <h2 className="text-2xl text-white font-bold sm:text-3xl">
-                  Crea interfacite utente dinamiche e reattive con React.
-                </h2>
-                <p className="mt-2 text-gray-300">
-                  Sviluppo siti web moderni e performanti con la libreria JavaScript React.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+      <div className="lg:py-24">
+        <h2 className="text-3xl font-bold sm:text-4xl text-white ">Grow your audience</h2>
+
+        <p className="mt-4 text-gray-400">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui hic atque tenetur quis
+          eius quos ea neque sunt, accusantium soluta minus veniam tempora deserunt? Molestiae eius
+          quidem quam repellat.
+        </p>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+          
+        </Slide>
+        <Slide direction={'left'} triggerOnce={false} duration={3500}>
+         <section>
+  <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+      <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
+      <h2 className="text-3xl font-bold sm:text-4xl text-white ">Grow your audience</h2>
+
+<p className="mt-4 text-gray-400">
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui hic atque tenetur quis
+  eius quos ea neque sunt, accusantium soluta minus veniam tempora deserunt? Molestiae eius
+  quidem quam repellat.
+</p>
+
+    
+      </div>
+
+      <div className="lg:py-24">
+  
+      <img
+          alt=""
+        src={wordpress}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+          
         </Slide>
         <Slide direction={'right'} triggerOnce={false} duration={3500}>
         <section>
