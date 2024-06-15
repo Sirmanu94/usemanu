@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import EcommercePage from "./pages/EcommercePage";
+import SitiWeb from "./pages/Sitiweb";
 
  const Router = createBrowserRouter([
     {
@@ -24,7 +25,11 @@ import EcommercePage from "./pages/EcommercePage";
     {
         path:"/e-commerce",
         element: <EcommercePage/>
-    }
+    },
+    {
+        path:"/sitiweb",
+        element: <SitiWeb/>
+    },
  ]
  )
 

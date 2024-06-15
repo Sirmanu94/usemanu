@@ -72,7 +72,7 @@ function Navbar() {
                       <Link to="/e-commerce" className="block px-4 py-2 hover:text-yellow-300">
                         E-Commerce
                       </Link>
-                      <Link to="/siti-web" className="block px-4 py-2 hover:text-yellow-300">
+                      <Link to="/sitiweb" className="block px-4 py-2 hover:text-yellow-300">
                         Siti Web
                       </Link>
                       <Link to="/web-application" className="block px-4 py-2 hover:text-yellow-300">
