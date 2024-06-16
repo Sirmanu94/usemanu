@@ -22,10 +22,10 @@ function SitiWeb() {
         </video>
 
         <Fade duration={2500}>
-          <div className="relative z-10 flex justify-center -mt-12">
+          <div className="relative z-10 flex justify-center mt-2">
             <img className="w-full  opacity-95" src={sito} alt="sito" />
-            <div className="absolute top-1/3 left-2/4  text-left text-white">
-              <h1 className="text-6xl font-bold mb-4">
+            <div className="absolute top-1/3 left-1/2  text-left text-white">
+              <h1 className="text-6xl w-2/3 font-bold mb-4">
                 Realizza il tuo Sito Web Professionale
               </h1>
               <p className="text-2xl">

@@ -2,7 +2,7 @@ import shopify from '../assets/shopify.png';
 import copy from "../assets/COPY.png";
 import responsive from "../assets/responsive.png";
 import seo from "../assets/seo.png";
-import marketing from "../assets/marketing.png";
+import marketing from "../assets/marketing2.png";
 import performance from "../assets/performance.png";
 import grafica from "../assets/grafica.png";
 
