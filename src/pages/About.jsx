@@ -6,8 +6,12 @@ import logovideo from '../assets/logovideo2.mp4';
 import Footer from "../components/Footer";
 import AboutNumbers from "../components/AboutNumbers";
 import connect from '../assets/connect.png'; // Percorso corretto per l'immagine
+import { useEffect } from "react";
 
 function About() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     return (
         <>
             <Navbar />
@@ -38,9 +42,9 @@ function About() {
                                     <span className="text-white border-b-2 border-yellow-300 uppercase">Chi siamo</span>
                                     <h2 className="my-4 font-bold text-3xl text-white sm:text-4xl">About <span className="text-yellow-300">useManu</span></h2>
                                     <p className="text-white text-md leading-8">
-                                        Salve, sono Emanuele, sviluppatore Full Stack. UseManu è il risultato della mia passione per la tecnologia e la programmazione, che mi ha portato a specializzarmi nello sviluppo di soluzioni web complete, dalla progettazione del front-end alla gestione del back-end.
-                                        Il nostro impegno è facilitare connessioni significative, offrendo una piattaforma innovativa dove talento e opportunità si incontrano. Dopo aver completato con successo un corso intensivo di circa 6 mesi con Develhope S.r.l., ho ottenuto la certificazione di Sviluppatore Full Stack. Sono in costante aggiornamento e formazione ed ho successivamente acquisito competenze come sviluppatore di e-commerce sulle principali piattaforme.
-                                        In attesa di ulteriori skills e competenze resto a vostra disposizione per realizzare ogni vostro desiderio digitale.
+                                        Ciao, sono Emanuele, sviluppatore Full Stack. UseManu è il risultato della passione per la tecnologia e la programmazione, che mi ha portato a specializzarmi nello sviluppo di soluzioni web complete, dalla progettazione del front-end alla gestione del back-end. <br/>
+                                        Il nostro impegno è facilitare connessioni significative, offrendo una piattaforma innovativa dove talento e opportunità si incontrano. Siamo in costante aggiornamento e formazione.
+                                        In attesa di ulteriori skills restiamo a vostra disposizione per realizzare ogni vostro desiderio digitale.
                                     <br />
                                     </p>
                                 </div>

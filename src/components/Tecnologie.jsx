@@ -1,9 +1,10 @@
 import { FaReact, FaNodeJs, FaDatabase, FaShopify, FaWordpress, FaJsSquare } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function Tecnologie(){
     return(
         <>
-                    <section className="text-white bg-gray-900 bg-opacity-90">
+                    <section className="text-white bg-black bg-opacity-70">
                 <div className=" mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
                     <div className="mx-auto max-w-lg text-center">
                         <h2 className="text-3xl font-bold sm:text-4xl text-yellow-400">Dai slancio al tuo business con soluzioni Full Stack</h2>
@@ -93,12 +94,11 @@ function Tecnologie(){
                     </div>
 
                     <div className="mt-12 text-center">
-                        <a
-                            href="#"
+                        <Link to='/contattaci'
                             className="inline-block rounded bg-yellow-300 px-12 py-3 text-sm font-medium text-black transition hover:bg-yellow-700 focus:outline-none focus:ring focus:ring-yellow-400"
                         >
-                            Inizia oggi
-                        </a>
+                            INFO
+                        </Link>
                     </div>
                 </div>
             </section>

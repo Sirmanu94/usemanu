@@ -10,7 +10,7 @@ function AboutNumbers() {
         <Fade triggerOnce={true} duration={1000}>
             <div className="flex justify-center pt-8 items-center p-6 text-center  xl:p-12 rounded-full  ">
                 <div className="text-white dark:text-white">
-                    <p className="mb-4 text-6xl font-extrabold md:text-7xl">20+</p>
+                    <p className="mb-4 text-6xl font-extrabold md:text-7xl">100+</p>
                     <h3 className="mb-2 text-2xl font-semibold">Progetti</h3>
                     <p className="font-light text-white dark:text-gray-400"></p>
                 </div>
@@ -30,7 +30,7 @@ function AboutNumbers() {
             <Fade triggerOnce={true} duration={1000} delay={900}>
             <div className="flex justify-center pt-6 items-center p-6 text-center  xl:p-12 dark:bg-gray-800 rounded-full ">
                 <div className="text-white dark:text-white">
-                    <p className="mb-4 text-4xl font-extrabold md:text-7xl">3</p>
+                    <p className="mb-4 text-4xl font-extrabold md:text-7xl">5</p>
                     <h3 className="mb-2 text-2xl font-semibold">Certificazioni</h3>
                     <p className="font-light text-white dark:text-gray-400"></p>
                 </div>

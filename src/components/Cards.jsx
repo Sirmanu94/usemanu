@@ -27,7 +27,7 @@ function Cards() {
       <div className="relative z-10">
         {/* Titolo principale */}
         <section className="text-center py-8">
-          <Fade triggerOnce={true} duration={3500}>
+          <Fade triggerOnce={true} duration={4500}>
           <h1 className="text-4xl font-extrabold text-white sm:text-5xl">
             PRINCIPALI TECNOLOGIE
           </h1>

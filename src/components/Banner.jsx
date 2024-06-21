@@ -1,11 +1,13 @@
 import background from '../assets/banner3.png';
 import { Fade } from "react-awesome-reveal";
+import { Link, useNavigate } from 'react-router-dom';
+
 
 function Banner() {
   return (
-    <Fade triggerOnce={false} duration={4500}>
+    <Fade duration={4500}>
       <section
-        className="bg-black text-white mt-[-40px]"
+        className="bg-black text-white "
         style={{ 
           backgroundImage: `url(${background})`, 
           backgroundSize: 'cover', 
@@ -13,11 +15,11 @@ function Banner() {
           height: '800px' 
         }} 
       >
-        <div className=" h-full flex justify-center items-center">
-          <div className="mx-auto max-w-screen-xl px-8 py-64 lg:flex lg:h-full lg:items-center">
-            <div className="mx-auto max-w-3xl text-center">
+        <div className=" h-full flex mt-10 justify-center items-center max-[768px]:-mt-50">
+          <div className="mx-auto max-w-screen-xl lg:flex lg:h-full lg:items-center">
+            <div className="mx-auto max-w-3xl text-center max-[768px]:text-center w-2/3">
               <h1 
-                className="text-white text-4xl font-extrabold sm:text-5xl whitespace-nowrap"
+                className="text-white text-4xl font-extrabold sm:text-5xl  max-[768px]:text-2xl "
               >
                 TRASFORMA LE TUE IDEE IN REALTA'
               </h1>
@@ -27,19 +29,19 @@ function Banner() {
               </p>
 
               <div className="mt-10 flex flex-wrap justify-center gap-6">
-                <a
-                  className="block w-full rounded border border-white bg-yellow-300 px-16 py-4 text-base font-medium text-black hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto transition-colors duration-300"
-                  href="#"
+                <Link to='/contattaci'
+                  className="block w-auto rounded border border-white bg-yellow-300 px-8 py-4 text-base font-medium text-black hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto transition-colors duration-300 max-[768px]:w-52"
+                  
                 >
                   CONTATTACI
-                </a>
+                </Link>
 
-                <a
-                  className="block w-full rounded border border-white px-16 py-4 text-base font-medium text-white hover:bg-yellow-300 hover:text-black focus:outline-none focus:ring active:bg-blue-500 sm:w-auto transition-colors duration-300"
+                <Link to='/sitiweb'
+                  className="block w-auto rounded border border-white px-8 py-4 text-base font-medium text-white hover:bg-yellow-300 hover:text-black focus:outline-none focus:ring active:bg-blue-500 sm:w-auto transition-colors duration-300 max-[768px]:w-52"
                   href="#"
                 >
                   SCOPRI DI PIU'
-                </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -5,6 +5,7 @@ import shopify from '../assets/shopify.png';
 import wordpress from '../assets/wordpress.png';
 import background from '../assets/background.mp4';
 import { Fade, Slide } from "react-awesome-reveal";
+import { Link } from "react-router-dom";
 
 function Cms() {
   return (
@@ -97,9 +98,9 @@ function Cms() {
                 <p className="mt-4 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
                   Compila il form oggi gratuitamente per scoprire come possiamo aiutarti a costruire il tuo e-commerce di successo con i migliori CMS sul mercato.
                 </p>
-                <a href="#" className="inline-flex justify-center items-center mt-8 py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                <Link to="/contattaci" className="inline-flex justify-center items-center mt-8 py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                   Contattaci
-                </a>
+                </Link>
               </Fade>
             </div>
           </section>

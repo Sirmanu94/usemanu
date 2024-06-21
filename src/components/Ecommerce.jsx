@@ -1,4 +1,7 @@
 import ecomm from '../assets/ecommvideo.mp4';
+import { useNavigate } from 'react-router-dom';
+
+
 
 function Ecommerce() {
   const handleVideoEnd = (event) => {
@@ -6,6 +9,7 @@ function Ecommerce() {
     event.target.pause();
     event.target.currentTime = event.target.duration;
   };
+  const navigate = useNavigate();
 
   return (
     <>
@@ -35,8 +39,8 @@ function Ecommerce() {
             </p>
 
             <div className="mt-8 flex justify-center items-center">
-              <button className="border border-white text-white rounded-full font-bold hover:text-yellow-300 px-8 py-2">
-                Scopri di più
+              <button onClick={()=> {navigate('/e-commerce')}} className="border border-white text-white rounded-full font-bold hover:text-yellow-300 px-8 py-2">
+                Crea il tuo E-Commerce
               </button>
             </div>
           </div>

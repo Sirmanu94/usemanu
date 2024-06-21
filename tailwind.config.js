@@ -14,6 +14,7 @@ export default {
     },
     backgroundImage: {
       'ecomm': "url('/src/assets/ecomm4.png')",
+      'progetti':"url('/src/assets/progetti.png')"
     },
     opacity: {
       '75': '0.75',
