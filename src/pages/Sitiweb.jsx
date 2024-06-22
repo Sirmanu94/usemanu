@@ -39,9 +39,11 @@ function SitiWeb() {
                 Siti Vetrina, Blog e su misura per tutte le esigenze. <br />
                 Tutti i nostri lavori sono Responsive e Facili da Gestire.
               </p>
+              <Link to="/contattaci">
               <button className="border mt-5 border-white rounded-full font-bold px-8 py-2 hover:text-yellow-300 hover:border-yellow-300 transition-colors duration-300">
                 RICHIEDI UN PREVENTIVO GRATUITO{" "}
               </button>
+              </Link>
             </div>
           </div>
         </Fade>
