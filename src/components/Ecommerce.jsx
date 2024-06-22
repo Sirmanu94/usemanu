@@ -18,6 +18,7 @@ function Ecommerce() {
         <video
           autoPlay
           muted
+          playsInline
           onEnded={handleVideoEnd}
           className="absolute top-0 left-0 w-full h-full object-cover"
         >

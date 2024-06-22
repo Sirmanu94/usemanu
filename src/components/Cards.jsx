@@ -15,6 +15,7 @@ function Cards() {
         autoPlay
         loop
         muted
+        playsInline
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
         <source src={background} type="video/mp4" />

@@ -21,10 +21,11 @@ function Progetti(){
                 loop
                 muted
                 className="fixed top-0 left-0 w-full h-full object-cover z-[-10]"
+                playsInline
             >
                 <source src={background} type="video/mp4" />
             </video>
-            ù<Find/>
+            <Find/>
             <Laura/>
             <Efs/>
             

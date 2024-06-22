@@ -9,10 +9,11 @@ function Videobanner(){
         <>
            
             <video
-                className="h-600 w-full bg-opacity-50  object-cover  z-0"
+                className="h-600 w-full bg-opacity-50  object-cover  z-0 max-[500px]:h-[300px]"
                 src={videobanner}
                 autoPlay
                 muted
+                playsInline
             />
       +
         </>

@@ -7,15 +7,15 @@ function Banner() {
   return (
     <Fade duration={4500}>
       <section
-        className="bg-black text-white "
+        className="bg-black text-white max-[500px]:bg-cover"
         style={{ 
           backgroundImage: `url(${background})`, 
           backgroundSize: 'cover', 
           backgroundPosition: 'center', 
-          height: '800px' 
+          height: '500px' 
         }} 
       >
-        <div className=" h-full flex mt-10 justify-center items-center max-[768px]:-mt-50">
+        <div className=" h-full flex mt-10 justify-center items-center max-[500px]:-mt-50 ">
           <div className="mx-auto max-w-screen-xl lg:flex lg:h-full lg:items-center">
             <div className="mx-auto max-w-3xl text-center max-[768px]:text-center w-2/3">
               <h1 

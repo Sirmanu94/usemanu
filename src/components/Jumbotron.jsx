@@ -11,14 +11,16 @@ function Junbotron() {
                 src={impossible}
                 autoPlay
                 loop
+                playsInline
                 muted
             />
               <video
-                className="h-screen w-full object-cont mt-[-40px] z-0 min-[768px]:hidden"
+                className="h-3/4 w-full object-cont mt-[-40px] z-0 min-[768px]:hidden"
                 src={impossiblemobile}
                 autoPlay
                 loop
                 muted
+                playsInline
             />
             <Link to='/sitiweb'> 
             <button 

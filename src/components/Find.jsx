@@ -37,6 +37,7 @@ function Find(){
             autoPlay
             muted
             loop
+            playsInline
             className=" rounded-md w-full group-hover:transform group-hover:-translate-y-2 object-contain transition duration-500 group-hover:opacity-90"
           />
         </a>
