@@ -30,12 +30,12 @@ function SitiWeb() {
 
         <Fade duration={2500}>
           <div className="relative z-10 flex justify-center -mt-12 max-[768px]:hidden">
-            <img className="w-full  opacity-80" src={sito} alt="sito" />
+            <img className="w-full object-cover opacity-80" src={sito} alt="sito" />
             <div className="absolute top-1/3 left-2/4  text-left text-white">
-              <h1 className="text-6xl font-bold mb-4">
+              <h1 className="lg:text-6xl font-bold mb-4 sm:text-2xl" >
                 Realizza il tuo Sito Web Professionale
               </h1>
-              <p className="text-2xl">
+              <p className="lg:text-2xl sm:text-xl">
                 Siti Vetrina, Blog e su misura per tutte le esigenze. <br />
                 Tutti i nostri lavori sono Responsive e Facili da Gestire.
               </p>

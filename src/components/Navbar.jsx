@@ -39,19 +39,19 @@ function Navbar() {
         <div className="container mx-auto flex items-center h-24 relative z-20">
           <Link to="/" className="flex items-center justify-center">
             <img
-              className="h-[110px] sm: h-4 max-[768px]:h-16 max-[500px]:ml-12"
+              className="h-[110px] sm: h-4 max-[768px]:h-16 max-[500px]:ml-12 max-[950px]:h-16"
               src={logoNavbar}
               alt="Logo"
             />
             <img
-              className="h-5 ml-10 sm: max-width-10 max-[768px]:ml-4 max-[500px]:h-3"
+              className="min-[500px]:hidden ml-4 h-4 w-2/3  "
               src={fullstack}
               alt="Fullstack"
             />
           </Link>
-          <nav className="contents font-semibold text-base lg:text-lg max-[500px]:hidden">
+          <nav className="contents font-semibold text-base lg:text-lg  max-[500px]:hidden">
             <ul className="mx-auto flex items-center ">
-              <li className="p-5 xl:p-8 active hover:text-yellow-300">
+              <li className="p-5 xl:p-8 active hover:text-yellow-300 ">
                 <Link to="/">
                   <span>Home</span>
                 </Link>
