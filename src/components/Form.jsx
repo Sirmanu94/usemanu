@@ -41,7 +41,7 @@ function Form() {
     return errors;
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
