@@ -10,6 +10,7 @@ import Form from "./components/Form";
 import Contattaci from "./pages/Contattaci";
 import NotFound from "./pages/NotFound";
 import Termini from "./pages/Termini";
+import ConfirmationPage from "./pages/ConfirmationPage";
 
  const Router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ import Termini from "./pages/Termini";
     {
         path:"termini",
         element: <Termini/>
+    },
+    {
+        path: "/thankyou",
+        element: <ConfirmationPage />,
     },
     {
         path: "*",

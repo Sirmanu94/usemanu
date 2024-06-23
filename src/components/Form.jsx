@@ -1,13 +1,21 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Form() {
   const [formData, setFormData] = useState({
-    servizio:"",
+    servizio: "",
     name: "",
     email: "",
     oggetto: "",
     messaggio: "",
   });
+
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
+
+  function thankyouPage() {
+    navigate('/thankyou');
+  }
 
   const { servizio, name, email, oggetto, messaggio } = formData;
 
@@ -19,7 +27,25 @@ function Form() {
     }));
   };
 
+  const validate = () => {
+    let errors = {};
+    if (!servizio) errors.servizio = "Seleziona un servizio";
+    if (!email) {
+      errors.email = "Email obbligatoria";
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      errors.email = "Formato email non valido";
+    }
+    if (!messaggio) errors.messaggio = "Il messaggio non deve essere vuoto";
+    return errors;
+  };
+
   const handleSubmit = async () => {
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
     try {
       const response = await fetch("http://localhost:3001/contattaci", {
         method: "POST",
@@ -33,12 +59,17 @@ function Form() {
         throw new Error("Errore durante l'invio dei dati");
       }
 
-      // Se la risposta è ok, puoi fare qualcosa come mostrare un messaggio di successo
       console.log("Dati inviati con successo!");
-      // Puoi anche resettare il form o fare altre azioni post-invio
+      setFormData({
+        servizio: "",
+        name: "",
+        email: "",
+        oggetto: "",
+        messaggio: "",
+      });
+      thankyouPage();
     } catch (error) {
       console.error("Errore durante l'invio dei dati:", error.message);
-      // Puoi gestire l'errore qui, ad esempio mostrando un messaggio all'utente
     }
   };
 
@@ -82,16 +113,13 @@ function Form() {
                   viewBox="0 0 482.6 482.6"
                 >
                   <path
-                    d="M98.339 320.8c47.6 56.9 104.9 101.7 170.3 133.4 24.9 11.8 58.2 25.8 95.3 28.2 2.3.1 4.5.2 6.8.2 24.9 0 44.9-8.6 61.2-26.3.1-.1.3-.3.4-.5 5.8-7 12.4-13.3 19.3-20 4.7-4.5 9.5-9.2 14.1-14 21.3-22.2 21.3-50.4-.2-71.9l-60.1-60.1c-10.2-10.6-22.4-16.2-35.2-16.2-12.8 0-25.1 5.6-35.6 16.1l-35.8 35.8c-3.3-1.9-6.7-3.6-9.9-5.2-4-2-7.7-3.9-11-6-32.6-20.7-62.2-47.7-90.5-82.4-14.3-18.1-23.9-33.3-30.6-48.8 9.4-8.5 18.2-17.4 26.7-26.1 3-3.1 6.1-6.2 9.2-9.3 10.8-10.8 16.6-23.3 16.6-36s-5.7-25.2-16.6-36l-29.8-29.8c-3.5-3.5-6.8-6.9-10.2-10.4-6.6-6.8-13.5-13.8-20.3-20.1-10.3-10.1-22.4-15.4-35.2-15.4-12.7 0-24.9 5.3-35.6 15.5l-37.4 37.4c-13.6 13.6-21.3 30.1-22.9 49.2-1.9 23.9 2.5 49.3 13.9 80 17.5 47.5 43.9 91.6 83.1 138.7zm-72.6-216.6c1.2-13.3 6.3-24.4 15.9-34l37.2-37.2c5.8-5.6 12.2-8.5 18.4-8.5 6.1 0 12.3 2.9 18 8.7 6.7 6.2 13 12.7 19.8 19.6 3.4 3.5 6.9 7 10.4 10.6l29.8 29.8c6.2 6.2 9.4 12.5 9.4 18.7s-3.2 12.5-9.4 18.7c-3.1 3.1-6.2 6.3-9.3 9.4-9.3 9.4-18 18.3-27.6 26.8l-.5.5c-8.3 8.3-7 16.2-5 22.2.1.3.2.5.3.8 7.7 18.5 18.4 36.1 35.1 57.1 30 37 61.6 65.7 96.4 87.8 4.3 2.8 8.9 5 13.2 7.2 4 2 7.7 3.9 11 6 .4.2.7.4 1.1.6 3.3 1.7 6.5 2.5 9.7 2.5 8 0 13.2-5.1 14.9-6.8l37.4-37.4c5.8-5.8 12.1-8.9 18.3-8.9 7.6 0 13.8 4.7 17.7 8.9l60.3 60.2c12 12 11.9 25-.3 37.7-4.2 4.5-8.6 8.8-13.3 13.3-7 6.8-14.3 13.8-20.9 21.7-11.5 12.4-25.2 18.2-42.9 18.2-1.7 0-3.5-.1-5.2-.2-32.8-2.1-63.3-14.9-86.2-25.8-62.2-30.1-116.8-72.8-162.1-127-37.3-44.9-62.4-86.7-79-131.5-10.3-27.5-14.2-49.6-12.6-69.7z"
+                    d="M98.339 320.8c47.6 56.9 104.9 101.7 170.3 133.4 24.9 11.8 58.2 25.8 95.3 28.2 2.3.1 4.5.2 6.8.2 24.9 0 44.9-8.6 61.2-26.3.1-.1.3-.3.4-.5 5.8-7 12.4-13.3 19.3-20 4.7-4.5 9.5-9.2 14.1-14 21.3-22.2 21.3-50.4-.2-71.9l-60.1-60.1c-10.2-10.6-22.4-16.2-35.2-16.2-12.8 0-25.1 5.6-35.6 16.1l-35.8 35.8c-3.3-1.9-6.7-3.6-9.9-5.2-4-2-7.7-3.9-11-6-32.6-20.7-62.2-47.7-90.5-82.4-14.3-18.1-23.9-33.3-30.6-48.8 9.4-8.5 18.2-17.4 26.7-26.1 3-3.1 6.1-6.2 9.2-9.3 10.8-10.8 16.6-23.3 16.6-36s-5.7-25.2-16.6-36l-29.8-29.8c-3.5-3.5-6.8-6.9-10.2-10.4-6.6-6.8-13.5-13.8-20.3-20.1-10.3-10.1-22.4-15.4-35.2-15.4-12.7 0-24.9 5.3-35.6 15.5l-37.4 37.4c-13.6 13.6-21.3 30.1-22.9 49.2-1.9 23.9 2.5 49.3 13.9 80 17.5 47.5 43.9 91.6 83.1 138.7zm-72.6-216.6c1.2-13.3 6.3-24.4 15.9-34l37.2-37.2c5.8-5.6 12.2-8.5 18.4-8.5 6.1 0 12.3 2.9 18 8.7 6.7 6.2 13 12.7 19.8 19.6 3.4 3.5 6.9 7 10.4 10.6l29.8 29.8c6.2 6.2 9.4 12.5 9.4 18.7s-3.2 12.5-9.4 18.7c-3.1 3.1-6.2 6.3-9.3 9.4-9.3 9.4-18 18.3-27.6 26.8l-.5.5c-8.3 8.3-7 16.2-5 22.2.1.3.2.5.3.8 7.7 18.5 18.4 36.1 35.1 57.1 30 37 61.5 66.1 96.1 87.5 4.6 2.9 9.1 5.1 13.4 7.4 5.7 2.9 11.1 5.5 16.4 8.7 5.6 3.4 12.2 3.1 17.8-1.2l41.5-41.5c6.2-6.2 12.4-9.4 18.7-9.4 6.3 0 12.4 3.3 18.7 9.5l60.1 60.1c6.4 6.4 6.4 12.7.2 19.3-4.2 4.4-8.5 8.7-12.9 12.9-6.6 6.3-13.4 12.7-19.1 19.9-9.5 10.8-19.8 13-31.6 13.7-33.7-2.2-64.2-15.4-86.4-26.2-62.2-29.5-116.1-72.8-161.3-129.1-37.5-44.8-62.9-86.6-78.5-131.7-10.3-28-14.3-50.9-12.5-71.5z"
                     data-original="#000000"
-                  ></path>
+                  />
                 </svg>
-                <a
-                  href="javascript:void(0)"
-                  className="text-white text-sm ml-4"
-                >
-                  +39 3926201354
-                </a>
+                <span className="text-white text-sm ml-4">
+                  +39 3926201365
+                </span>
               </li>
               <li className="flex items-center">
                 <svg
@@ -99,103 +127,128 @@ function Form() {
                   width="16px"
                   height="16px"
                   fill="#fff"
-                  viewBox="0 0 368.16 368.16"
+                  viewBox="0 0 483.3 483.3"
                 >
                   <path
-                    d="M184.08 0c-74.992 0-136 61.008-136 136 0 24.688 11.072 51.24 11.536 52.36 3.576 8.488 10.632 21.672 15.72 29.4l93.248 141.288c3.816 5.792 9.464 9.112 15.496 9.112s11.68-3.32 15.496-9.104l93.256-141.296c5.096-7.728 12.144-20.912 15.72-29.4.464-1.112 11.528-27.664 11.528-52.36 0-74.992-61.008-136-136-136zM293.8 182.152c-3.192 7.608-9.76 19.872-14.328 26.8l-93.256 141.296c-1.84 2.792-2.424 2.792-4.264 0L88.696 208.952c-4.568-6.928-11.136-19.2-14.328-26.808-.136-.328-10.288-24.768-10.288-46.144 0-66.168 53.832-120 120-120s120 53.832 120 120c0 21.408-10.176 45.912-10.28 46.152z"
+                    d="M424.3 34.35H59c-32.6 0-59 26.4-59 59v296.7c0 32.6 26.4 59 59 59h138.7v30.9H155c-5.5 0-10 4.5-10 10s4.5 10 10 10h173.2c5.5 0 10-4.5 10-10s-4.5-10-10-10h-42.8v-30.9H424c32.6 0 59-26.4 59-59v-296.7c.1-32.6-26.4-59-58.9-59zm-181 419h-3.4v-30.9h3.4v30.9zm204-89.9c0 21.6-17.6 39.2-39.2 39.2H59c-21.6 0-39.2-17.6-39.2-39.2v-296.7c0-21.6 17.6-39.2 39.2-39.2h365.3c21.6 0 39.2 17.6 39.2 39.2v296.7h-.1z"
                     data-original="#000000"
-                  ></path>
+                  />
                   <path
-                    d="M184.08 64.008c-39.704 0-72 32.304-72 72s32.296 72 72 72 72-32.304 72-72-32.296-72-72-72zm0 128c-30.872 0-56-25.12-56-56s25.128-56 56-56 56 25.12 56 56-25.128 56-56 56z"
+                    d="M322.3 216.55H161c-5.5 0-10 4.5-10 10v77.4c0 5.5 4.5 10 10 10h161.3c5.5 0 10-4.5 10-10v-77.4c0-5.5-4.5-10-10-10zm-10 77.4H171v-57.4h141.3v57.4z"
                     data-original="#000000"
-                  ></path>
-                </svg>
-                <a
-                  href="javascript:void(0)"
-                  className="text-white text-sm ml-4"
-                >
-                  Italy
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="bg-gray-100 p-6 col-span-2 rounded-lg">
-            <form className="mt-2 space-y-4">
-              <label
-                htmlFor="servizio"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >
-                A quale servizio sei interessato ?
-              </label>
-              <select
-                id="servizio"
-                name="servizio"
-                onChange={handleChange}
-                value={servizio}
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              >
-                <option>Seleziona un servizio</option>
-                <option value="Sito Web vetrina">Voglio creare un Sito Web vetrina</option>
-                <option value="Sito web Blog">Voglio creare un Sito Web Blog</option>
-                <option value="E-commerce">Voglio creare un E-Commerce</option>
-                <option value="Seo">Sono interessato a Marketing e Seo</option>
-              </select>
-              <input
-                type="text"
-                onChange={handleChange}
-                placeholder="Nome e Cognome"
-                className="w-full rounded-lg py-3 px-4 text-gray-800 text-sm outline-[#a91079]"
-                value={name}
-                name="name"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={handleChange}
-                name="email"
-                className="w-full rounded-lg py-3 px-4 text-gray-800 text-sm outline-[#a91079]"
-              />
-              <input
-                type="text"
-                value={oggetto}
-                name="oggetto"
-                placeholder="Oggetto"
-                onChange={handleChange}
-                className="w-full rounded-lg py-3 px-4 text-gray-800 text-sm outline-[#a91079]"
-              />
-              <textarea
-                value={messaggio}
-                name="messaggio"
-                placeholder="Parlaci del tuo progetto. A cosa sei interessato ? Siamo qui per aiutarti."
-                rows="6"
-                onChange={handleChange}
-                className="w-full rounded-lg px-4 text-gray-800 text-sm pt-3 outline-[#a91079]"
-              ></textarea>
-              <button
-                type="button"
-                onClick={handleSubmit}
-                className="text-white bg-black hover:bg-[#a91079e2] tracking-wide rounded-lg text-sm px-4 py-3 flex items-center justify-center w-full !mt-6"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16px"
-                  height="16px"
-                  fill="#fff"
-                  className="mr-2"
-                  viewBox="0 0 548.244 548.244"
-                >
+                  />
                   <path
-                    fillRule="evenodd"
-                    d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z"
-                    clipule="evenodd"
+                    d="M359.5 133.35h-236c-5.5 0-10 4.5-10 10s4.5 10 10 10h236c5.5 0 10-4.5 10-10s-4.4-10-10-10z"
                     data-original="#000000"
                   />
                 </svg>
-                INVIA{" "}
-              </button>
-            </form>
+                <span className="text-white text-sm ml-4">
+                  Napoli
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div className="lg:col-span-2 lg:mt-0 mt-10">
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="relative">
+                <label
+                  htmlFor="servizio"
+                  className="text-gray-400 text-sm font-bold mb-2"
+                >
+                  Servizio *
+                </label>
+                <select
+                  id="servizio"
+                  name="servizio"
+                  value={servizio}
+                  onChange={handleChange}
+                  className="w-full p-3 border border-gray-700 bg-transparent rounded outline-none text-gray-100 focus:border-red-600 mt-2"
+                >
+                  <option value="">Seleziona un'opzione</option>
+                  <option value="Sito Vetrina">
+                    Voglio creare un Sito Web vetrina
+                  </option>
+                  <option value="E-commerce">
+Vgolio creare un E-Commerce                  </option>
+                  <option value="Marketing">
+                    Sono interessato a Marketing e Seo
+                  </option>
+                </select>
+                {errors.servizio && <p className="text-red-500 text-sm mt-1">{errors.servizio}</p>}
+              </div>
+              <div className="relative">
+                <label
+                  htmlFor="name"
+                  className="text-gray-400 text-sm font-bold mb-2"
+                >
+                  Nome e Cognome
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  value={name}
+                  onChange={handleChange}
+                  className="w-full p-3 border border-gray-700 bg-transparent rounded outline-none text-gray-100 focus:border-red-600 mt-2"
+                />
+              </div>
+            </div>
+            <div className="relative mt-6">
+              <label
+                htmlFor="email"
+                className="text-gray-400 text-sm font-bold mb-2"
+              >
+                Email *
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="text"
+                value={email}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-700 bg-transparent rounded outline-none text-gray-100 focus:border-red-600 mt-2"
+              />
+              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+            </div>
+            <div className="relative mt-6">
+              <label
+                htmlFor="oggetto"
+                className="text-gray-400 text-sm font-bold mb-2"
+              >
+                Oggetto
+              </label>
+              <input
+                id="oggetto"
+                name="oggetto"
+                type="text"
+                value={oggetto}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-700 bg-transparent rounded outline-none text-gray-100 focus:border-red-600 mt-2"
+              />
+            </div>
+            <div className="relative mt-6">
+              <label
+                htmlFor="messaggio"
+                className="text-gray-400 text-sm font-bold mb-2"
+              >
+                Messaggio *
+              </label>
+              <textarea
+                id="messaggio"
+                name="messaggio"
+                value={messaggio}
+                onChange={handleChange}
+                rows="4"
+                className="w-full p-3 border border-gray-700 bg-transparent rounded outline-none text-gray-100 focus:border-red-600 mt-2"
+              ></textarea>
+              {errors.messaggio && <p className="text-red-500 text-sm mt-1">{errors.messaggio}</p>}
+            </div>
+            <button
+              onClick={handleSubmit}
+              className="w-full mt-6 p-3 bg-yellow-300 hover:bg-yellow-600 hover:bg-red-700 transition-colors duration-300 text-black text-sm font-bold uppercase rounded cursor-pointer"
+            >
+              Invia richiesta
+            </button>
           </div>
         </div>
       </div>
@@ -204,3 +257,4 @@ function Form() {
 }
 
 export default Form;
+
