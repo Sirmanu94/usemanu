@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Form() {
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
   const [formData, setFormData] = useState({
     servizio: "",
     name: "",
@@ -47,7 +49,7 @@ function Form() {
     }
 
     try {
-      const response = await fetch("http://localhost:3001/contattaci", {
+      const response = await fetch("${backendUrl}/contattaci", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
