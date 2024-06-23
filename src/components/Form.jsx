@@ -42,6 +42,7 @@ function Form() {
   };
 
   const handleSubmit = async () => {
+    e.preventDefault()
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
@@ -49,7 +50,7 @@ function Form() {
     }
 
     try {
-      const response = await fetch("${backendUrl}/contattaci", {
+      const response = await fetch(`${backendUrl}/contattaci`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
