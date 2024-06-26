@@ -43,6 +43,8 @@ function Form() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    console.log('Backend URL:', process.env.REACT_APP_BACKEND_URL);
+
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
