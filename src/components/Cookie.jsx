@@ -10,7 +10,7 @@ function Cookie(){
         buttonText="Accetta"
         declineButtonText="Rifiuta"
         cookieName="myCookieConsent"
-        style={{ background: "white", color : "black", height: "100px" }}
+        style={{ background: "white", color : "black" }}
         declineButtonStyle={{ color: "white", background: "black", fontSize: "20px", borderRadius: "10px" }}
         buttonStyle={{ color: "white", background: "black",  fontSize: "20px", borderRadius: "10px" }}
         expires={150}
