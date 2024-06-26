@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Form() {
-  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+  const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 
   const [formData, setFormData] = useState({
     servizio: "",
@@ -44,6 +44,8 @@ function Form() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     console.log('Backend URL:', process.env.REACT_APP_BACKEND_URL);
+    console.log(JSON.stringify(process.env));
+
 
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
