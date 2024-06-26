@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar";
 import Videobanner from "../components/Videobanner";
 import { Fade, Slide } from "react-awesome-reveal";
 import { useEffect } from "react";
+import Cookie from "../components/Cookie";
 
 
 function Home(){
@@ -16,6 +17,7 @@ function Home(){
   }, []);
     return(
      <>
+     <Cookie/>
      <Navbar/>
      <Junbotron/>
      <Banner/>
