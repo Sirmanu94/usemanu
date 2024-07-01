@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import impossible from "../assets/impossible3.mp4"; // Percorso corretto per il video
 import impossiblemobile from "../assets/impossibilemobile.mp4"; // Percorso corretto per il video
 
