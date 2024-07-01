@@ -4,13 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function Form() {
 
-  const handleClick = () => {
-    ReactGA.event({
-      category: "Click Pulsante",
-      action: "Form Inviato",
-      label: "Etichetta pulsante",
-    });
-  };
+  
   const [formData, setFormData] = useState({
     servizio: "",
     name: "",
@@ -50,7 +44,11 @@ function Form() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-  
+    ReactGA.event({
+      category: "Click Pulsante",
+      action: "Form Inviato",
+      label: "Etichetta pulsante",
+    });
 
 
     const validationErrors = validate();
