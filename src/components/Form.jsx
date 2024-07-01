@@ -257,7 +257,7 @@ Vgolio creare un E-Commerce                  </option>
               {errors.messaggio && <p className="text-red-500 text-sm mt-1">{errors.messaggio}</p>}
             </div>
             <button
-              onClick={handleSubmit && handleClick}
+              onClick={handleSubmit}
               className="w-full mt-6 p-3 bg-yellow-300 hover:bg-yellow-600 hover:bg-red-700 transition-colors duration-300 text-black text-sm font-bold uppercase rounded cursor-pointer"
             >
               Invia richiesta
