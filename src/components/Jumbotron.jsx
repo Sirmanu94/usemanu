@@ -7,7 +7,7 @@ function Junbotron() {
   const handleClick = () => {
     ReactGA.event({
       category: "Click Pulsante",
-      action: "Cliccato sul pulsante",
+      action: "Cliccato su Pulsante Jumbotron",
       label: "Etichetta pulsante",
     });
   };

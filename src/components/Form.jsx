@@ -3,6 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 function Form() {
 
+  const handleClick = () => {
+    ReactGA.event({
+      category: "Click Pulsante",
+      action: "Form Inviato",
+      label: "Etichetta pulsante",
+    });
+  };
   const [formData, setFormData] = useState({
     servizio: "",
     name: "",
@@ -249,7 +256,7 @@ Vgolio creare un E-Commerce                  </option>
               {errors.messaggio && <p className="text-red-500 text-sm mt-1">{errors.messaggio}</p>}
             </div>
             <button
-              onClick={handleSubmit}
+              onClick={handleSubmit && handleClick}
               className="w-full mt-6 p-3 bg-yellow-300 hover:bg-yellow-600 hover:bg-red-700 transition-colors duration-300 text-black text-sm font-bold uppercase rounded cursor-pointer"
             >
               Invia richiesta
