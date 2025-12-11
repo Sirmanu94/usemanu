@@ -6,7 +6,6 @@ import Efs from "../components/Efs";
 import Find from "../components/Find";
 import Footer from "../components/Footer";
 import { useEffect } from "react";
-import Canapaio from "../components/Canapaio";
 
 
 function Progetti(){
@@ -28,7 +27,6 @@ function Progetti(){
             <Find/>
             <Laura/>
             <Efs/>
-            <Canapaio/>
             <Recensioni/>
             <Footer/>
         </>

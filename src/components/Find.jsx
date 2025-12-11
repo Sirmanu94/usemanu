@@ -1,5 +1,4 @@
 import { Zoom } from "react-awesome-reveal";
-import find from "../assets/find1.mov";
 import find2 from "../assets/find2.jpg";
 
 function Find(){
@@ -33,7 +32,7 @@ function Find(){
       <li className="lg:col-span-3">
         <a href="#" className="group relative block">
           <video
-            src={find}
+            src={find2}
             autoPlay
             muted
             loop
